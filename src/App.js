@@ -5,6 +5,7 @@ import {
   Sky,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
 import Effect from "./Effect";
 
 function Pedestral(props) {
@@ -51,7 +52,9 @@ export default function App() {
       <Pedestral />
 
       {/* The actual effect. Do your editing in that component. */}
-      <Effect />
+      <Suspense>
+        <Effect />
+      </Suspense>
     </Canvas>
   );
 }

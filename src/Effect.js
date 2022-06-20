@@ -1,5 +1,5 @@
 import { useTexture } from "@react-three/drei"
-import { between, plusMinus } from "randomish"
+import { between, insideCircle, plusMinus } from "randomish"
 import { MeshStandardMaterial, NormalBlending } from "three"
 import { Emitter, MeshParticles, MeshParticlesMaterial } from "three-vfx"
 import { useDepthBuffer } from "./lib/useDepthBuffer"
@@ -32,6 +32,10 @@ export default function Effect() {
         continuous
         count={() => between(5, 10)}
         setup={(c) => {
+          /* Randomize the position a little. */
+          const pos = insideCircle(0.5)
+          c.position.set(pos.x, 0, pos.y)
+
           /* Set an initial velocity. */
           c.velocity.set(plusMinus(2), between(3, 15), plusMinus(2))
 

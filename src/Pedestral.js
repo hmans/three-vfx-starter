@@ -19,5 +19,5 @@ export default function Pedestral(props) {
         <meshStandardMaterial color="#333" />
       </mesh>
     </group>
-  );
+  )
 }

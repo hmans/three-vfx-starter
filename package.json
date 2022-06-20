@@ -44,5 +44,14 @@
   },
   "devDependencies": {
     "@types/three": "^0.141.0"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": false,
+    "arrowParens": "always",
+    "printWidth": 80
   }
 }

@@ -2,20 +2,20 @@ import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
-  Sky,
-} from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Perf } from "r3f-perf";
-import { Suspense } from "react";
-import Effect from "./Effect";
-import Pedestral from "./Pedestral";
+  Sky
+} from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
+import { Perf } from "r3f-perf"
+import { Suspense } from "react"
+import Effect from "./Effect"
+import Pedestral from "./Pedestral"
 
 export default function App() {
   return (
     <Canvas
       gl={{
         powerPreference: "high-performance",
-        depth: true,
+        depth: true
       }}
       dpr={[1, 1]}
     >
@@ -43,5 +43,5 @@ export default function App() {
       {/* Performance monitoring */}
       <Perf />
     </Canvas>
-  );
+  )
 }

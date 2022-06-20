@@ -21,7 +21,7 @@ export default function Effect() {
         baseMaterial={MeshStandardMaterial}
         blending={NormalBlending}
         map={texture}
-        color="orange"
+        color="#ccf"
         transparent
         billboard
         depthTest={true}
@@ -30,18 +30,23 @@ export default function Effect() {
         depthTexture={depthBuffer.depthTexture}
       />
 
-      <Repeat times={Infinity} interval={1 / 40}>
-        <Emitter
-          count={5}
-          setup={(c) => {
-            c.velocity
-              .set(plusMinus(1), upTo(1), plusMinus(1))
-              .multiplyScalar(between(1, 5));
+      <Emitter
+        continuous
+        count={() => between(5, 10)}
+        setup={(c) => {
+          c.velocity
+            .set(plusMinus(1), upTo(8), plusMinus(1))
+            .multiplyScalar(between(1, 2));
 
-            c.lifetime = between(0.5, 2.5);
-          }}
-        />
-      </Repeat>
+          c.acceleration.set(0, -12, 0);
+
+          c.lifetime = between(0.5, 2.5);
+
+          c.scale[0].setScalar(0.5);
+
+          c.color[0].multiplyScalar(between(0.6, 2));
+        }}
+      />
     </MeshParticles>
   );
 }

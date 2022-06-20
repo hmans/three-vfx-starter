@@ -49,8 +49,8 @@ export default function App() {
       <fog attach="fog" args={["#e8e8f0", 10, 100]} />
       <PerspectiveCamera position={[0, 5, 10]} makeDefault />
       <OrbitControls
-        enablePan={false}
-        enableZoom={true}
+        enablePan
+        enableZoom
         maxPolarAngle={Math.PI / 2}
         makeDefault
         target={[0, 2, 0]}

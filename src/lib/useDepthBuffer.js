@@ -21,10 +21,10 @@ export function useDepthBuffer(resolution = 0.5) {
     const textureHeight = size.height * dpr * resolution;
 
     renderTarget.setSize(textureWidth, textureHeight);
-  }, [resolution, size.width, size.height, dpr]);
+  }, [resolution, size.width, size.height, dpr, renderTarget]);
 
   /* Dispose of render target at unmount */
-  useLayoutEffect(() => () => renderTarget.dispose(), []);
+  useLayoutEffect(() => () => renderTarget.dispose(), [renderTarget]);
 
   /* Every frame, render to our render target so we get a fresh depth texture. */
   useFrame((state) => {

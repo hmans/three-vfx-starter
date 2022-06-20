@@ -7,7 +7,6 @@ import {
 import { Canvas } from "@react-three/fiber";
 import { Perf } from "r3f-perf";
 import { Suspense } from "react";
-import { LinearEncoding } from "three";
 import Effect from "./Effect";
 
 function Pedestral(props) {

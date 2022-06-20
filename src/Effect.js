@@ -1,5 +1,5 @@
 import { useTexture } from "@react-three/drei"
-import { between, plusMinus, upTo } from "randomish"
+import { between, plusMinus } from "randomish"
 import { MeshStandardMaterial, NormalBlending } from "three"
 import { Emitter, MeshParticles, MeshParticlesMaterial } from "three-vfx"
 import { useDepthBuffer } from "./lib/useDepthBuffer"
@@ -13,14 +13,17 @@ export default function Effect() {
       <planeGeometry />
 
       <MeshParticlesMaterial
+        /* We can use many of the same props as the normal Three.js materials here. */
         baseMaterial={MeshStandardMaterial}
         blending={NormalBlending}
         map={texture}
         color="#ccf"
         transparent
-        billboard
         depthTest={true}
         depthWrite={false}
+        /* We're using meshes for particles, so let's make sure they're always billboarded. */
+        billboard
+        /* For soft particles, we can define a softness, and also need to provide a depth buffer. */
         softness={5}
         depthTexture={depthBuffer.depthTexture}
       />
@@ -29,16 +32,21 @@ export default function Effect() {
         continuous
         count={() => between(5, 10)}
         setup={(c) => {
-          c.velocity
-            .set(plusMinus(1), upTo(8), plusMinus(1))
-            .multiplyScalar(between(1, 2))
+          /* Set an initial velocity. */
+          c.velocity.set(plusMinus(2), between(3, 15), plusMinus(2))
 
+          /* Set an acceleration force. Like gravity! */
           c.acceleration.set(0, -12, 0)
 
-          c.lifetime = between(0.5, 2.5)
+          /* Randomize the lifetime a little. */
+          c.lifetime = between(1, 2.5)
 
-          c.scale[0].setScalar(0.5)
+          /* Set minimum and maximum scale. By default, three-vfx will interpolate
+             from one to the other linearly over the lifetime of the particle. */
+          c.scale[0].setScalar(between(0.3, 0.8))
+          c.scale[1].setScalar(between(0.8, 1))
 
+          /* Modify the color a little. */
           c.color[0].multiplyScalar(between(0.6, 2))
         }}
       />

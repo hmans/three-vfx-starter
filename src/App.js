@@ -5,6 +5,7 @@ import {
   Sky,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import Effect from "./Effect";
 
 function Pedestral(props) {
   return (
@@ -37,7 +38,6 @@ export default function App() {
       <Environment preset="sunset" />
       <Sky />
       <fog attach="fog" args={["#e8e8f0", 10, 100]} />
-
       <PerspectiveCamera position={[0, 5, 10]} makeDefault />
       <OrbitControls
         enablePan={false}
@@ -47,11 +47,11 @@ export default function App() {
         target={[0, 2, 0]}
       />
 
+      {/* A nice pedestral for your effect to present itself on. */}
       <Pedestral />
-      <mesh>
-        <boxGeometry />
-        <meshStandardMaterial color="red" />
-      </mesh>
+
+      {/* The actual effect. Do your editing in that component. */}
+      <Effect />
     </Canvas>
   );
 }

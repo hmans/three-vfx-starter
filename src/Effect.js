@@ -1,12 +1,7 @@
 import { useTexture } from "@react-three/drei";
 import { between, plusMinus, upTo } from "randomish";
 import { MeshStandardMaterial, NormalBlending } from "three";
-import {
-  Emitter,
-  MeshParticles,
-  MeshParticlesMaterial,
-  Repeat,
-} from "three-vfx";
+import { Emitter, MeshParticles, MeshParticlesMaterial } from "three-vfx";
 import { useDepthBuffer } from "./lib/useDepthBuffer";
 
 export default function Effect() {

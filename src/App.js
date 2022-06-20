@@ -41,7 +41,7 @@ export default function App() {
       </Suspense>
 
       {/* Performance monitoring */}
-      <Perf />
+      <Perf position="bottom-right" />
     </Canvas>
   )
 }

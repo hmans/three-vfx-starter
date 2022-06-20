@@ -32,6 +32,12 @@ export default function Effect() {
         continuous
         count={() => between(5, 10)}
         setup={(c) => {
+          /*
+          This function will be called once for each particle, and is responsible for
+          setting up the particle's initial state. The object passed into it holds a number
+          of properties (position, velocity, etc.) that can be modified as needed.
+          */
+
           /* Randomize the position a little. */
           const pos = insideCircle(0.5)
           c.position.set(pos.x, 0, pos.y)

@@ -7,9 +7,11 @@ import {
   MeshParticlesMaterial,
   Repeat,
 } from "three-vfx";
+import { useDepthBuffer } from "./lib/useDepthBuffer";
 
 export default function Effect() {
   const texture = useTexture("/textures/particle.png");
+  const depthBuffer = useDepthBuffer();
 
   return (
     <MeshParticles>
@@ -24,6 +26,8 @@ export default function Effect() {
         billboard
         depthTest={true}
         depthWrite={false}
+        softness={5}
+        depthTexture={depthBuffer.depthTexture}
       />
 
       <Repeat times={Infinity} interval={1 / 40}>

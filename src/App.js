@@ -7,6 +7,7 @@ import {
 import { Canvas } from "@react-three/fiber";
 import { Perf } from "r3f-perf";
 import { Suspense } from "react";
+import { LinearEncoding } from "three";
 import Effect from "./Effect";
 
 function Pedestral(props) {
@@ -35,7 +36,13 @@ function Pedestral(props) {
 
 export default function App() {
   return (
-    <Canvas>
+    <Canvas
+      gl={{
+        powerPreference: "high-performance",
+        depth: true,
+      }}
+      dpr={[1, 1]}
+    >
       {/* Environment, lighting, etc. */}
       <Environment preset="sunset" />
       <Sky />

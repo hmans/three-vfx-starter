@@ -36,11 +36,12 @@ export default function App() {
       {/* Environment, lighting, etc. */}
       <Environment preset="sunset" />
       <Sky />
+      <fog attach="fog" args={["#e8e8f0", 10, 100]} />
 
       <PerspectiveCamera position={[0, 5, 10]} makeDefault />
       <OrbitControls
         enablePan={false}
-        enableZoom={false}
+        enableZoom={true}
         maxPolarAngle={Math.PI / 2}
         makeDefault
       />

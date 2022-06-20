@@ -44,6 +44,7 @@ export default function App() {
         enableZoom={true}
         maxPolarAngle={Math.PI / 2}
         makeDefault
+        target={[0, 2, 0]}
       />
 
       <Pedestral />

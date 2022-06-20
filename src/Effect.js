@@ -19,10 +19,10 @@ export default function Effect() {
         baseMaterial={MeshStandardMaterial}
         blending={NormalBlending}
         map={texture}
-        color="white"
+        color="orange"
         transparent
         billboard
-        depthTest={false}
+        depthTest={true}
         depthWrite={false}
       />
 

@@ -5,6 +5,7 @@ import {
   Sky,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Perf } from "r3f-perf";
 import { Suspense } from "react";
 import Effect from "./Effect";
 
@@ -55,6 +56,9 @@ export default function App() {
       <Suspense>
         <Effect />
       </Suspense>
+
+      {/* Performance monitoring */}
+      <Perf />
     </Canvas>
   );
 }

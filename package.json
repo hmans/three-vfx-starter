@@ -8,6 +8,8 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "leva": "^0.9.27",
+    "r3f-perf": "^6.2.6",
     "randomish": "^0.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -32,9 +32,9 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "last 5 chrome versions",
+      "last 5 firefox versions",
+      "last 5 safari versions"
     ],
     "development": [
       "last 1 chrome version",

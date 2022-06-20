@@ -15,7 +15,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "three": "^0.141.0",
-    "three-vfx": "^0.0.0-canary-20220619162816",
+    "three-vfx": "0.0.0-canary-20220619162816",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
